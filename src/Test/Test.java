@@ -1,12 +1,18 @@
 package Test;
 
-import Estructures.Item;
+import Estructures.HashTable;
+import File.FileManager;
+
+import java.io.IOException;
 
 public class Test {
     public static void main(String[] args) {
-        Item<String, Integer> inteiro = new Item<>("Numero", 1);
-        Item<String, Integer> outroInt = new Item<>("Numero", 1);
+        try {
+            HashTable<String, Integer> words = FileManager.hashWords("/home/nando/Documentos/GitHub/Trabalho-02-ED2/src/Test/Texts/texto01.txt");
+            System.out.println(words);
 
-        System.out.println(inteiro.compareTo(outroInt));
+        } catch (IOException e) {
+            System.out.println("Coloque o arquivo direito, seu animal!");;
+        }
     }
 }

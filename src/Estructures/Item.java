@@ -3,8 +3,8 @@ package Estructures;
 import java.util.Objects;
 
 public class Item<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<Item<K, V>> {
-    private K key;
-    private V value;
+    private final K key;
+    private final V value;
 
     public Item(K key, V value) {
         this.key = key;
@@ -15,16 +15,8 @@ public class Item<K extends Comparable<K>, V extends Comparable<V>> implements C
         return key;
     }
 
-    public void setKey(K key) {
-        this.key = key;
-    }
-
     public V getValue() {
         return value;
-    }
-
-    public void setValue(V value) {
-        this.value = value;
     }
 
     @Override
